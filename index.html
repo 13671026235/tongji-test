@@ -17,5 +17,38 @@ var _hmt = _hmt || [];
 
 <body lang="zh-CN">  
   this is a tongji for baidu
+  
+  <p>
+    <input type="button" value="trace order" onclick="traceOrder()">
+  <p>
+    <input type="button" value="trace event" onclick="traceEvent()">
+    
+    <script>
+      function traceOrder(){
+        var orderInfo = {
+                  "orderId": "C03-0910519-9203246",
+                  "orderTotal": 100.30,
+                  "item": []
+              };
+              orderInfo.item.push({
+                  "skuId": "B00HF32JZE",
+                  "skuName": "韩寒MOOK2:去你家玩好吗",
+                  "category": "图书 > 文学 > 作品集",
+                  "Price": 18.30,
+                  "Quantity": 1
+              });
+              orderInfo.item.push({
+                  "skuId": "B00119J7N0",
+                  "skuName": "C++编程思想(第1卷)(第2版)(附光盘)",
+                  "category": "图书 > 计算机与互联网 > 程序语言与软件开发 > 语言与开发工具 > C语言及其相关",
+                  "Price": 41.00,
+                  "Quantity": 2
+              });
+              _hmt.push(['_trackOrder', orderInfo]);
+        }
+      function traceEvent(){
+        _hmt.push(['_trackEvent', 'video', 'play', 'Hey Jude']);
+      }
+    </script>
 </body>
 </html>  
